@@ -1,9 +1,21 @@
+<style>
+    table, th, td {
+        border: 1px solid black;
+        padding: 0;
+        margin: 0;
+        border-spacing: 0;
+    }
+
+
+</style>
+
 <h1>Listing users</h1>
+<h2>Monyong 2</h2>
 
 <table>
   <thead>
     <tr>
-      <th>Name</th>
+      <th>Nama</th>
       <th>Email</th>
       <th></th>
       <th></th>
@@ -16,9 +28,9 @@
       <tr>
         <td><%= user.name %></td>
         <td><%= user.email %></td>
-        <td><%= link_to 'Show', user %></td>
-        <td><%= link_to 'Edit', edit_user_path(user) %></td>
-        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Tampil', user %></td>
+        <td><%= link_to 'Ubah', edit_user_path(user) %></td>
+        <td><%= link_to 'Hapus', user, method: :delete, data: { confirm: 'Anda yakin?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -26,4 +38,4 @@
 
 <br>
 
-<%= link_to 'New User', new_user_path %>
+<%= link_to 'Pengguna baru', new_user_path %>
