@@ -1,0 +1,78 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+AddAdminToUsers	db/migrate/20140110020258_add_admin_to_users.rb	/^class AddAdminToUsers < ActiveRecord::Migration$/;"	c
+AddIndexToUsersEmail	db/migrate/20131214235147_add_index_to_users_email.rb	/^class AddIndexToUsersEmail < ActiveRecord::Migration$/;"	c
+AddPasswordDigestToUsers	db/migrate/20131215000451_add_password_digest_to_users.rb	/^class AddPasswordDigestToUsers < ActiveRecord::Migration$/;"	c
+AddRememberTokenToUsers	db/migrate/20131227062352_add_remember_token_to_users.rb	/^class AddRememberTokenToUsers < ActiveRecord::Migration$/;"	c
+Application	config/application.rb	/^  class Application < Rails::Application$/;"	c	class:DemoApp
+ApplicationController	app/controllers/application_controller.rb	/^class ApplicationController < ActionController::Base$/;"	c
+ApplicationHelper	app/helpers/application_helper.rb	/^module ApplicationHelper$/;"	m
+CreateMicroposts	db/migrate/20131121082753_create_microposts.rb	/^class CreateMicroposts < ActiveRecord::Migration$/;"	c
+CreateUsers	db/migrate/20131024184548_create_users.rb	/^class CreateUsers < ActiveRecord::Migration$/;"	c
+DemoApp	config/application.rb	/^module DemoApp$/;"	m
+DumbsController	app/controllers/dumbs_controller.rb	/^class DumbsController < ApplicationController$/;"	c
+Micropost	app/models/micropost.rb	/^class Micropost < ActiveRecord::Base$/;"	c
+MicropostsController	app/controllers/microposts_controller.rb	/^class MicropostsController < ApplicationController$/;"	c
+MicropostsHelper	app/helpers/microposts_helper.rb	/^module MicropostsHelper$/;"	m
+SessionsController	app/controllers/sessions_controller.rb	/^class SessionsController < ApplicationController$/;"	c
+SessionsHelper	app/helpers/sessions_helper.rb	/^module SessionsHelper$/;"	m
+StaticPagesController	app/controllers/static_pages_controller.rb	/^class StaticPagesController < ApplicationController$/;"	c
+StaticPagesHelper	app/helpers/static_pages_helper.rb	/^module StaticPagesHelper$/;"	m
+User	app/models/user.rb	/^class User < ActiveRecord::Base$/;"	c
+UsersController	app/controllers/users_controller.rb	/^class UsersController < ApplicationController$/;"	c
+UsersHelper	app/helpers/users_helper.rb	/^module UsersHelper$/;"	m
+admin_user	app/controllers/users_controller.rb	/^    def admin_user$/;"	f	class:UsersController
+change	db/migrate/20131024184548_create_users.rb	/^  def change$/;"	f	class:CreateUsers
+change	db/migrate/20131121082753_create_microposts.rb	/^  def change$/;"	f	class:CreateMicroposts
+change	db/migrate/20131214235147_add_index_to_users_email.rb	/^  def change$/;"	f	class:AddIndexToUsersEmail
+change	db/migrate/20131215000451_add_password_digest_to_users.rb	/^  def change$/;"	f	class:AddPasswordDigestToUsers
+change	db/migrate/20131227062352_add_remember_token_to_users.rb	/^  def change$/;"	f	class:AddRememberTokenToUsers
+change	db/migrate/20140110020258_add_admin_to_users.rb	/^  def change$/;"	f	class:AddAdminToUsers
+correct_user	app/controllers/users_controller.rb	/^    def correct_user$/;"	f	class:UsersController
+create	app/controllers/dumbs_controller.rb	/^    def create$/;"	f	class:DumbsController
+create	app/controllers/microposts_controller.rb	/^  def create$/;"	f	class:MicropostsController
+create	app/controllers/sessions_controller.rb	/^    def create$/;"	f	class:SessionsController
+create	app/controllers/users_controller.rb	/^  def create$/;"	f	class:UsersController
+create_remember_token	app/models/user.rb	/^        def create_remember_token$/;"	f	class:User
+current_user	app/helpers/sessions_helper.rb	/^    def current_user$/;"	f	class:SessionsHelper
+current_user=	app/helpers/sessions_helper.rb	/^    def current_user=(user)$/;"	f	class:SessionsHelper
+current_user?	app/helpers/sessions_helper.rb	/^    def current_user?(user)$/;"	f	class:SessionsHelper
+destroy	app/controllers/dumbs_controller.rb	/^    def destroy$/;"	f	class:DumbsController
+destroy	app/controllers/microposts_controller.rb	/^  def destroy$/;"	f	class:MicropostsController
+destroy	app/controllers/sessions_controller.rb	/^    def destroy$/;"	f	class:SessionsController
+destroy	app/controllers/users_controller.rb	/^  def destroy$/;"	f	class:UsersController
+edit	app/controllers/microposts_controller.rb	/^  def edit$/;"	f	class:MicropostsController
+edit	app/controllers/users_controller.rb	/^  def edit$/;"	f	class:UsersController
+encrypt	app/models/user.rb	/^    def User.encrypt(token)$/;"	F	class:User
+full_title	app/helpers/application_helper.rb	/^    def full_title(page_title)$/;"	f	class:ApplicationHelper
+gravatar_for	app/helpers/users_helper.rb	/^    def gravatar_for(user, options = { size: 50})$/;"	f	class:UsersHelper
+help	app/controllers/static_pages_controller.rb	/^  def help$/;"	f	class:StaticPagesController
+home	app/controllers/static_pages_controller.rb	/^  def home$/;"	f	class:StaticPagesController
+index	app/controllers/microposts_controller.rb	/^  def index$/;"	f	class:MicropostsController
+index	app/controllers/users_controller.rb	/^  def index$/;"	f	class:UsersController
+micropost_params	app/controllers/microposts_controller.rb	/^    def micropost_params$/;"	f	class:MicropostsController
+new	app/controllers/dumbs_controller.rb	/^    def new$/;"	f	class:DumbsController
+new	app/controllers/microposts_controller.rb	/^  def new$/;"	f	class:MicropostsController
+new	app/controllers/sessions_controller.rb	/^    def new$/;"	f	class:SessionsController
+new	app/controllers/users_controller.rb	/^  def new$/;"	f	class:UsersController
+new_remember_token	app/models/user.rb	/^    def User.new_remember_token$/;"	F	class:User
+redirect_back_or	app/helpers/sessions_helper.rb	/^    def redirect_back_or(default)$/;"	f	class:SessionsHelper
+secure_token	config/initializers/secret_token.rb	/^def secure_token$/;"	f
+set_micropost	app/controllers/microposts_controller.rb	/^    def set_micropost$/;"	f	class:MicropostsController
+show	app/controllers/microposts_controller.rb	/^  def show$/;"	f	class:MicropostsController
+show	app/controllers/users_controller.rb	/^  def show$/;"	f	class:UsersController
+sign_in	app/helpers/sessions_helper.rb	/^    def sign_in(user)$/;"	f	class:SessionsHelper
+sign_in	spec/support/utilities.rb	/^def sign_in(user, options={})$/;"	f
+sign_out	app/helpers/sessions_helper.rb	/^    def sign_out$/;"	f	class:SessionsHelper
+signed_in?	app/helpers/sessions_helper.rb	/^    def signed_in?$/;"	f	class:SessionsHelper
+signed_in_user	app/controllers/users_controller.rb	/^    def signed_in_user$/;"	f	class:UsersController
+store_location	app/helpers/sessions_helper.rb	/^    def store_location$/;"	f	class:SessionsHelper
+update	app/controllers/microposts_controller.rb	/^  def update$/;"	f	class:MicropostsController
+update	app/controllers/users_controller.rb	/^  def update$/;"	f	class:UsersController
+user_params	app/controllers/users_controller.rb	/^    def user_params$/;"	f	class:UsersController
+valid_signin	spec/support/utilities.rb	/^def valid_signin(user)$/;"	f
+valid_signup	spec/support/utilities.rb	/^def valid_signup(user)$/;"	f

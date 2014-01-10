@@ -1,41 +1,10 @@
-<style>
-    table, th, td {
-        border: 1px solid black;
-        padding: 0;
-        margin: 0;
-        border-spacing: 0;
-    }
+<% provide(:title, 'All users') %>
+<h1>All users</h1>
 
+<%= will_paginate %>
 
-</style>
+<ul class="users">
+    <%= render @users %>
+</ul>
 
-<h1>Listing users</h1>
-<h2>Monyong 2</h2>
-
-<table>
-  <thead>
-    <tr>
-      <th>Nama</th>
-      <th>Email</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @users.each do |user| %>
-      <tr>
-        <td><%= user.name %></td>
-        <td><%= user.email %></td>
-        <td><%= link_to 'Tampil', user %></td>
-        <td><%= link_to 'Ubah', edit_user_path(user) %></td>
-        <td><%= link_to 'Hapus', user, method: :delete, data: { confirm: 'Anda yakin?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'Pengguna baru', new_user_path %>
+<%= will_paginate %>
