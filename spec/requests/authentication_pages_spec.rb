@@ -79,6 +79,17 @@ describe "Authentication" do
                     it "should render the desired protected page" do
                         expect(page).to have_title('Edit user')
                     end
+                    describe "when signing in again" do
+                        before do 
+                            click_link "Sign out"
+                            sign_in user
+                        end
+                        it "should go to default place" do
+                            current_path.should == user_path(user)
+                            expect(page).to have_title(user.name)
+                        end
+                    end
+
                 end
             end
 
