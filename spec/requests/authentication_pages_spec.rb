@@ -65,7 +65,7 @@ describe "Authentication" do
                 before { sign_in user }
 
                 describe "after signing in" do
-
+                    before { visit edit_user_path(user) }
                     it "should render the desired protected page" do
                         expect(page).to have_title('Edit user')
                     end
