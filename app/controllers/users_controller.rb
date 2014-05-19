@@ -27,6 +27,7 @@ class UsersController < ApplicationController
   end
 
   def edit
+      @user = User.find(params[:id])
   end
 
   def update
@@ -39,8 +40,13 @@ class UsersController < ApplicationController
   end
 
   def destroy
-      User.find(params[:id]).destroy
-      flash[:success] = "User deleted."
+      @user = User.find(params[:id])
+      if not @user.admin?
+          @user.destroy
+          flash[:success] = "User deleted."
+      else
+          flash.now[:error] = "Can't delete admins."
+      end
       redirect_to users_url
   end
 
