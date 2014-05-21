@@ -2,6 +2,16 @@
     <%= render 'shared/error_messages', object: f.object %>
     <div class="field">
         <%= f.text_area :content, placeholder: "Compone new micropost..." %>
+        <p>Remaining chars: <span id="count">140</span></p>
     </div>
     <%= f.submit "Post", class: "btn btn-large btn-primary" %>
 <% end %>
+<script>
+$(function() {
+    var update_count = function() {
+        $("#count").text(140 - $("#micropost_content").val().length);
+    };
+    $("#micropost_content").keyup(update_count);
+    update_count();
+});
+</script>
