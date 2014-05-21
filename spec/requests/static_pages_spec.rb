@@ -40,6 +40,24 @@ describe "StaticPages" do
                 should have_content('1 micropost')
                 should have_no_content('1 microposts')
             end
+
+        end
+
+        describe "pagination" do
+            let(:user) { FactoryGirl.create(:user) }
+            before do
+                50.times { FactoryGirl.create(:micropost, user: user, content: "Lorem ipsum") }
+                sign_in user
+                visit root_path
+            end
+
+            it { should have_selector('div.pagination') }
+
+            it "should list each user" do
+                user.microposts.paginate(page: 1).each do |item|
+                    expect(page).to have_selector("li##{item.id}")
+                end
+            end
         end
     end
     describe "Help page" do
