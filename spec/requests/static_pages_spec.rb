@@ -27,6 +27,11 @@ describe "StaticPages" do
                     expect(page).to have_selector("li##{item.id}", text: item.content)
                 end
             end
+            it "should be able to delete" do
+                expect do
+                    click_link('delete', match: :first)
+                end.to change(user.feed, :count).by(-1)
+            end
         end
     end
     describe "Help page" do
