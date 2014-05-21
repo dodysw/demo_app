@@ -27,10 +27,18 @@ describe "StaticPages" do
                     expect(page).to have_selector("li##{item.id}", text: item.content)
                 end
             end
+
             it "should be able to delete" do
                 expect do
                     click_link('delete', match: :first)
                 end.to change(user.feed, :count).by(-1)
+            end
+
+            it "sidebar micropost count should have correct pluralization" do
+                should have_content('2 microposts') 
+                click_link('delete', match: :first)
+                should have_content('1 micropost')
+                should have_no_content('1 microposts')
             end
         end
     end
