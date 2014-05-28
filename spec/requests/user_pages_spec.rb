@@ -55,6 +55,17 @@ describe "UserPages" do
           it { should_not have_link('delete', href: micropost_path(m2)) }
       end
 
+        describe "follower/following counts" do
+            let(:other_user) { FactoryGirl.create(:user) }
+            before do
+                other_user.follow!(user)
+                visit user_path(user) 
+            end
+
+            it { should have_link("0 following", href: following_user_path(user)) }
+            it { should have_link("1 followers", href: followers_user_path(user)) }
+        end
+
       describe "signed in" do
           before do
               sign_in user
