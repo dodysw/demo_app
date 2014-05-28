@@ -1,11 +1,16 @@
 class User < ActiveRecord::Base
     has_many :microposts, dependent: :destroy
-    before_save { email.downcase!  }
+    before_save do
+        email.downcase!
+        username.downcase!
+    end
     before_create :create_remember_token
     validates :name, presence: true, length: { maximum: 50 }
     validates :password, length: { minimum: 6 }
     VALID_EMAIL_REGEX = /\A[\w+\-.]+@([a-z\d\-]+\.)+[a-z]+\z/i
     validates :email, presence: true, format: { with: VALID_EMAIL_REGEX }, uniqueness: { case_sensitive: false }
+    VALID_USERNAME_REGEX = /\A[a-z0-9_]+{1,15}\z/i
+    validates :username, presence: true, format: { with: VALID_USERNAME_REGEX }, uniqueness: { case_sensitive: false }
 
     has_secure_password
 

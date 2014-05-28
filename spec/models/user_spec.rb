@@ -25,6 +25,7 @@ describe User do
     it { should respond_to(:follow!) }
     it { should respond_to(:reverse_relationships) }
     it { should respond_to(:followers) }
+    it { should respond_to(:username) }
 
 
     it { should be_valid }
@@ -51,6 +52,16 @@ describe User do
 
     describe "when name is too long" do
         before { @user.name = "a" * 51 }
+        it { should_not be_valid }
+    end
+
+    describe "when username is not present" do
+        before { @user.username = " " }
+        it { should_not be_valid }
+    end
+
+    describe "when username is too long" do
+        before { @user.username = "a" * 16 }
         it { should_not be_valid }
     end
 
