@@ -49,7 +49,7 @@ describe "Authentication" do
             let(:user) { FactoryGirl.create(:user) }
 
             describe "in the Users controller" do
-                
+
                 describe "visiting the edit page" do
                     before { visit edit_user_path(user) }
                     it { should have_title('Sign in') }
