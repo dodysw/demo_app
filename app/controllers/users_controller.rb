@@ -9,7 +9,7 @@ class UsersController < ApplicationController
 
     def show
         @user = User.find(params[:id])
-        @microposts = @user.microposts.paginate(page: params[:page])
+        @microposts = @user.microposts.excluding_replies.paginate(page: params[:page])
     end
     def new
         redirect_to(root_url) if signed_in?

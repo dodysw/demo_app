@@ -3,6 +3,7 @@ namespace :db do
     task populate: :environment do
         make_users
         make_microposts
+        make_microposts_with_reply
         make_relationships
     end
 end
@@ -38,6 +39,16 @@ def make_microposts
     50.times do
         content = Faker::Lorem.sentence(5)
         users.each { |user| user.microposts.create!(content: content) }
+    end
+end
+
+def make_microposts_with_reply
+    users = User.all(limit: 6)
+    users.each do |user_mentioning| 
+        users.each do |user_mentioned|
+            content = "@" + user_mentioned.username + " " + Faker::Lorem.sentence(4)
+            user_mentioning.microposts.create!(content: content) unless user_mentioning == user_mentioned
+        end
     end
 end
 

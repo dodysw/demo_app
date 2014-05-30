@@ -11,6 +11,7 @@ def valid_signup(user)
     fill_in "Email",        with: user.email
     fill_in "Password",     with: user.password
     fill_in "Confirm Password", with: user.password_confirmation
+    fill_in "Username", with: user.username
 end
 
 RSpec::Matchers.define :have_error_message do |message|

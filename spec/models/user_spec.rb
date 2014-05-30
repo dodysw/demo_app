@@ -5,7 +5,8 @@ describe User do
         @user = User.new(name: "Example User", 
                          email: "user@exampe.com",
                          password: "foobar",
-                         password_confirmation: "foobar"
+                         password_confirmation: "foobar",
+                         username: "example"
                         ) 
     end
     subject { @user }
@@ -162,20 +163,26 @@ describe User do
                 expect(Micropost.where(id: micropost.id)).to be_empty
             end
         end
+
+
         describe "status" do
             let(:unfollowed_post) do
                 FactoryGirl.create(:micropost, user: FactoryGirl.create(:user))
             end
             let(:followed_user) { FactoryGirl.create(:user) }
+            let(:reply_to_post) { FactoryGirl.create(:micropost, user: FactoryGirl.create(:user), content: "@" + @user.username + " Lorem ipsum") }
 
             before do
                 @user.follow!(followed_user)
                 3.times { followed_user.microposts.create!(content: "Lorem ipsum") }
             end
 
+            its(:microposts) { should_not include(reply_to_post) }
+
             its(:feed) { should include(newer_micropost) }
             its(:feed) { should include(older_micropost) }
             its(:feed) { should_not include(unfollowed_post) }
+            its(:feed) { should include(reply_to_post) }
             its(:feed) do
                 followed_user.microposts.each do |micropost|
                     should include(micropost)

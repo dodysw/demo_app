@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
     validates :password, length: { minimum: 6 }
     VALID_EMAIL_REGEX = /\A[\w+\-.]+@([a-z\d\-]+\.)+[a-z]+\z/i
     validates :email, presence: true, format: { with: VALID_EMAIL_REGEX }, uniqueness: { case_sensitive: false }
-    VALID_USERNAME_REGEX = /\A[a-z0-9_]+{1,15}\z/i
+    VALID_USERNAME_REGEX = /\A[a-z0-9_]{1,15}\z/i
     validates :username, presence: true, format: { with: VALID_USERNAME_REGEX }, uniqueness: { case_sensitive: false }
 
     has_secure_password
@@ -20,7 +20,7 @@ class User < ActiveRecord::Base
     has_many :followers, through: :reverse_relationships, source: :follower 
 
     def feed
-        Micropost.from_users_followed_by(self)
+        Micropost.including_replies(self)
     end
 
     def following?(other_user)
